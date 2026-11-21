@@ -1,0 +1,19 @@
+{%- comment -%}
+  A CSS-drawn glass keepsake orb with a small screen inside. Used as the hero
+  visual and as the placeholder wherever a product photo has not been uploaded yet.
+
+  Usage: {% render 'orb' %}
+         {% render 'orb', compact: true %}
+{%- endcomment -%}
+<div class="orb{% if compact %} orb--compact{% endif %}" role="img" aria-label="{{ 'general.orb_label' | t }}">
+  <div class="orb__glow" aria-hidden="true"></div>
+  <div class="orb__base" aria-hidden="true"></div>
+  <div class="orb__ball" aria-hidden="true">
+    <div class="orb__screen">
+      <span class="orb__sun"></span>
+      <span class="orb__hill orb__hill--back"></span>
+      <span class="orb__hill orb__hill--front"></span>
+    </div>
+    <span class="orb__shine"></span>
+  </div>
+</div>

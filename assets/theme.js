@@ -3,34 +3,6 @@
 
   var theme = window.theme || { routes: {}, strings: {} };
 
-  /* ---------- Calendar device illustration: show today's real dates ---------- */
-
-  function initDevices() {
-    var locale = document.documentElement.lang || undefined;
-    var now = new Date();
-
-    document.querySelectorAll('[data-device]').forEach(function (device) {
-      var month = device.querySelector('[data-device-month]');
-      var time = device.querySelector('[data-device-time]');
-
-      try {
-        if (month) month.textContent = now.toLocaleDateString(locale, { month: 'long', year: 'numeric' });
-        if (time) time.textContent = now.toLocaleTimeString(locale, { hour: 'numeric', minute: '2-digit' });
-
-        device.querySelectorAll('[data-device-day]').forEach(function (day) {
-          var date = new Date(now);
-          date.setDate(now.getDate() + Number(day.dataset.deviceDay));
-          var weekday = day.querySelector('[data-device-weekday]');
-          var number = day.querySelector('[data-device-number]');
-          if (weekday) weekday.textContent = date.toLocaleDateString(locale, { weekday: 'short' });
-          if (number) number.textContent = date.getDate();
-        });
-      } catch (error) {
-        /* Keep the server-rendered dates. */
-      }
-    });
-  }
-
   /* ---------- Header menus ---------- */
 
   function initMenus() {
@@ -247,7 +219,6 @@
   }
 
   function init() {
-    initDevices();
     initMenus();
     initQuantity();
     initCartForm();
@@ -263,7 +234,6 @@
 
   /* Re-run in the theme editor when a section is added or re-rendered. */
   document.addEventListener('shopify:section:load', function (event) {
-    initDevices();
     event.target.querySelectorAll('[data-product]').forEach(initProduct);
   });
 })();

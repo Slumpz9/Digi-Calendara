@@ -3,89 +3,89 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "The family calendar display",
-        "heading": "The whole household, on one wall.",
-        "text": "<p>A touchscreen calendar for your home. It syncs the calendars you already use and shows everyone's week at a glance.</p>",
-        "button_label": "Shop displays",
+        "eyebrow": "The video keepsake orb",
+        "heading": "Their favourite memory, glowing in glass.",
+        "text": "<p>A glass orb with a small screen inside that plays the video you choose. A gift for the moment you never want them to forget.</p>",
+        "button_label": "Shop the orb",
         "secondary_label": "See how it works",
-        "background": "default"
+        "background": "dark"
       }
     },
     "trust": {
       "type": "trust-bar",
       "blocks": {
-        "shipping": { "type": "item", "settings": { "icon": "truck", "text": "Free shipping" } },
-        "trial": { "type": "item", "settings": { "icon": "home", "text": "30-day home trial" } },
-        "warranty": { "type": "item", "settings": { "icon": "shield", "text": "2-year warranty" } },
-        "subscription": { "type": "item", "settings": { "icon": "check", "text": "No subscription needed" } }
+        "video": { "type": "item", "settings": { "icon": "play", "text": "Plays your own video" } },
+        "media": { "type": "item", "settings": { "icon": "photo", "text": "Holds videos, photos and music" } },
+        "screen": { "type": "item", "settings": { "icon": "sparkle", "text": "2.8-inch colour screen" } },
+        "glass": { "type": "item", "settings": { "icon": "check", "text": "Real glass orb" } }
       },
-      "block_order": ["shipping", "trial", "warranty", "subscription"],
+      "block_order": ["video", "media", "screen", "glass"],
       "settings": { "background": "default" }
     },
     "features": {
       "type": "features",
       "blocks": {
-        "sync": {
+        "video": {
           "type": "feature",
           "settings": {
-            "icon": "sync",
-            "heading": "Syncs with your calendars",
-            "text": "<p>Connect Google, iCloud and Outlook calendars once. New events show up on the wall on their own.</p>"
+            "icon": "play",
+            "heading": "Plays the video you choose",
+            "text": "<p>The first dance, the first steps, the trip you still talk about. Pick the clip and it plays inside the glass.</p>"
           }
         },
-        "colours": {
+        "screen": {
           "type": "feature",
           "settings": {
-            "icon": "palette",
-            "heading": "A colour for everyone",
-            "text": "<p>Each person gets their own colour, so anyone can see who needs to be where from across the room.</p>"
+            "icon": "sparkle",
+            "heading": "A screen inside the orb",
+            "text": "<p>A 2.8-inch colour screen sits behind the glass, so the picture seems to float inside it.</p>"
           }
         },
-        "chores": {
+        "memory": {
           "type": "feature",
           "settings": {
             "icon": "star",
-            "heading": "Chore charts kids tap off",
-            "text": "<p>Set up routines and chores. Kids tick them off on the screen and see their own progress.</p>"
+            "heading": "Room for more than one memory",
+            "text": "<p>4GB of built-in memory holds videos, photos and music files.</p>"
           }
         },
-        "meals": {
+        "glass": {
           "type": "feature",
           "settings": {
-            "icon": "meal",
-            "heading": "Meal plan for the week",
-            "text": "<p>Plan dinners next to the schedule, so the question of what's for tea is already answered.</p>"
+            "icon": "check",
+            "heading": "Real glass",
+            "text": "<p>The orb is glass, with the weight and shine that plastic does not have.</p>"
           }
         },
-        "lists": {
+        "gift": {
           "type": "feature",
           "settings": {
-            "icon": "list",
-            "heading": "Shared lists",
-            "text": "<p>Groceries, packing and to-dos live on the display and on every family member's phone.</p>"
+            "icon": "gift",
+            "heading": "A gift that is about them",
+            "text": "<p>For anniversaries, Valentine's Day, weddings, a new baby, or someone who is missed.</p>"
           }
         },
-        "photos": {
+        "keep": {
           "type": "feature",
           "settings": {
-            "icon": "photo",
-            "heading": "A photo frame when idle",
-            "text": "<p>When nobody is using it, the screen turns into a slideshow of your family photos.</p>"
+            "icon": "heart",
+            "heading": "Kept, not put in a drawer",
+            "text": "<p>It sits on a shelf or bedside table, where the memory is seen every day.</p>"
           }
         }
       },
-      "block_order": ["sync", "colours", "chores", "meals", "lists", "photos"],
+      "block_order": ["video", "screen", "memory", "glass", "gift", "keep"],
       "settings": {
         "eyebrow": "What it does",
-        "heading": "One screen for everything the house runs on",
+        "heading": "A small screen with a big memory inside",
         "background": "default"
       }
     },
     "products": {
       "type": "featured-collection",
       "settings": {
-        "eyebrow": "The displays",
-        "heading": "Choose your display",
+        "eyebrow": "The collection",
+        "heading": "Choose your orb",
         "limit": 3,
         "button_label": "View all",
         "background": "muted"
@@ -94,78 +94,33 @@
     "how": {
       "type": "how-it-works",
       "blocks": {
-        "mount": {
+        "choose": {
           "type": "step",
           "settings": {
-            "heading": "Hang it or stand it",
-            "text": "<p>Use the included wall mount or the stand. All it needs is a power socket and Wi-Fi.</p>"
+            "heading": "Choose your orb",
+            "text": "<p>Pick the size and colour you like.</p>"
           }
         },
-        "connect": {
+        "load": {
           "type": "step",
           "settings": {
-            "heading": "Connect your calendars",
-            "text": "<p>Sign in from your phone and pick which calendars to show. Give each person a colour.</p>"
+            "heading": "Add your memory",
+            "text": "<p>Put the video, photos or songs you want on it. Add the exact steps here once you have tried it yourself.</p>"
           }
         },
-        "share": {
+        "give": {
           "type": "step",
           "settings": {
-            "heading": "Everyone stays in sync",
-            "text": "<p>Add an event on any phone and it appears on the wall. Change it on the wall and it updates everywhere.</p>"
+            "heading": "Give it",
+            "text": "<p>Hand it over and watch them see the moment again.</p>"
           }
         }
       },
-      "block_order": ["mount", "connect", "share"],
+      "block_order": ["choose", "load", "give"],
       "settings": {
-        "eyebrow": "Setup",
-        "heading": "On the wall and in sync in minutes",
+        "eyebrow": "How it works",
+        "heading": "Three steps to a gift they will keep",
         "background": "dark"
-      }
-    },
-    "compare": {
-      "type": "compare",
-      "blocks": {
-        "small": {
-          "type": "model",
-          "settings": {
-            "size": "10\"",
-            "heading": "Counter",
-            "subheading": "Best for a worktop or desk",
-            "specs": "HD touchscreen\nStand included\nFits under kitchen cabinets",
-            "button_label": "Shop the 10\"",
-            "highlight": false
-          }
-        },
-        "medium": {
-          "type": "model",
-          "settings": {
-            "size": "15\"",
-            "heading": "Wall",
-            "subheading": "Best for the kitchen or hallway",
-            "specs": "Full HD touchscreen\nWall mount and stand included\nReadable from across the room",
-            "button_label": "Shop the 15\"",
-            "highlight": true,
-            "badge": "Most popular"
-          }
-        },
-        "large": {
-          "type": "model",
-          "settings": {
-            "size": "27\"",
-            "heading": "Command centre",
-            "subheading": "Best for large or busy families",
-            "specs": "Full HD touchscreen\nWall mount included\nMonth view with room for everyone",
-            "button_label": "Shop the 27\"",
-            "highlight": false
-          }
-        }
-      },
-      "block_order": ["small", "medium", "large"],
-      "settings": {
-        "eyebrow": "Compare sizes",
-        "heading": "Which one fits your home?",
-        "background": "default"
       }
     },
     "quotes": {
@@ -198,7 +153,7 @@
       },
       "block_order": ["one", "two", "three"],
       "settings": {
-        "eyebrow": "From real homes",
+        "eyebrow": "From real customers",
         "heading": "What customers say",
         "background": "muted"
       }
@@ -206,43 +161,43 @@
     "faq": {
       "type": "faq",
       "blocks": {
-        "calendars": {
+        "loading": {
           "type": "question",
           "settings": {
-            "question": "Which calendars does it work with?",
-            "answer": "<p>List the calendar services your display syncs with here, for example Google Calendar, Apple iCloud and Outlook.</p>"
+            "question": "How do I put my video on it?",
+            "answer": "<p>Explain the steps here once you have loaded a video onto your own sample, including which file types work.</p>"
           }
         },
-        "subscription": {
+        "size": {
           "type": "question",
           "settings": {
-            "question": "Is there a monthly fee?",
-            "answer": "<p>Say plainly whether every feature is included in the price or whether some need a subscription.</p>"
+            "question": "How big is it?",
+            "answer": "<p>The screen is 2.8 inches. Add the orb's width, height and weight here from your sample.</p>"
           }
         },
-        "mounting": {
+        "power": {
           "type": "question",
           "settings": {
-            "question": "How does it mount, and does it need to be plugged in?",
-            "answer": "<p>Explain what's in the box for mounting, the cable length, and that it needs mains power and Wi-Fi.</p>"
+            "question": "Does it need to stay plugged in?",
+            "answer": "<p>Say whether it runs on a battery or needs a cable, and what comes in the box.</p>"
           }
         },
-        "privacy": {
+        "delivery": {
           "type": "question",
           "settings": {
-            "question": "What happens to our calendar data?",
-            "answer": "<p>Describe where calendar data is stored and who can see it, and link to your privacy policy.</p>"
+            "question": "When will it arrive?",
+            "answer": "<p>Give your real delivery time here, and the last order date for Christmas or Valentine's Day.</p>"
           }
         },
         "returns": {
           "type": "question",
           "settings": {
-            "question": "What if it doesn't suit our home?",
-            "answer": "<p>Summarise your returns window and warranty here, and link to the full policy.</p>"
+            "question": "What if it arrives damaged or I change my mind?",
+            "answer": "<p>Summarise your returns and replacement policy here, and link to the full policy.</p>"
           }
         }
       },
-      "block_order": ["calendars", "subscription", "mounting", "privacy", "returns"],
+      "block_order": ["loading", "size", "power", "delivery", "returns"],
       "settings": {
         "eyebrow": "Questions",
         "heading": "Good to know before you buy",
@@ -252,11 +207,11 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Be first to hear about new displays",
-        "text": "<p>Restocks, new features and the occasional offer. Unsubscribe any time.</p>",
+        "heading": "Be first to hear about new keepsakes",
+        "text": "<p>New designs and the occasional offer. Unsubscribe any time.</p>",
         "background": "muted"
       }
     }
   },
-  "order": ["hero", "trust", "features", "products", "how", "compare", "quotes", "faq", "newsletter"]
+  "order": ["hero", "trust", "features", "products", "how", "quotes", "faq", "newsletter"]
 }

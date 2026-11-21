@@ -7,7 +7,7 @@
             {%- case block.type -%}
               {%- when 'text' -%}
                 <p class="footer__brand">
-                  {% render 'icon', name: 'calendar' %}
+                  {% render 'icon', name: 'sparkle' %}
                   <span>{{ block.settings.heading | default: shop.name | escape }}</span>
                 </p>
                 <div class="rte">{{ block.settings.text }}</div>
@@ -123,7 +123,7 @@
           "type": "richtext",
           "id": "text",
           "label": "Text",
-          "default": "<p>Touchscreen calendar displays that keep the whole household on the same page.</p>"
+          "default": "<p>Glass keepsake orbs that play the memories you choose.</p>"
         }
       ]
     },

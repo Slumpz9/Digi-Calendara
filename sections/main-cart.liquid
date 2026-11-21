@@ -20,7 +20,7 @@
                 {%- if item.image -%}
                   {{ item.image | image_url: width: 300 | image_tag: loading: 'lazy', alt: '' }}
                 {%- else -%}
-                  {% render 'calendar-device', compact: true %}
+                  {% render 'orb', compact: true %}
                 {%- endif -%}
               </a>
 

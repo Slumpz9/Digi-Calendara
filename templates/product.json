@@ -10,21 +10,21 @@
         "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true } },
         "perks": {
           "type": "perks",
-          "settings": { "items": "Free shipping\n30-day returns\nWall mount and stand included" }
+          "settings": { "items": "Plays your own video\n2.8-inch colour screen\n4GB built-in memory" }
         },
         "description": { "type": "description", "settings": {} },
         "specs": {
           "type": "collapsible",
           "settings": {
-            "heading": "Tech specs",
-            "content": "<p>Screen size and resolution, dimensions, weight, Wi-Fi, power, and mounting details.</p>"
+            "heading": "Details",
+            "content": "<p>Glass orb with a 2.8-inch colour screen and 4GB of memory for videos, photos and music. Add the size, weight and power details from your sample.</p>"
           }
         },
         "box": {
           "type": "collapsible",
           "settings": {
             "heading": "What's in the box",
-            "content": "<p>List the display, power adapter, wall mount, stand and anything else you include.</p>"
+            "content": "<p>List the orb, the stand, the cable and anything else that is included.</p>"
           }
         },
         "shipping": {
@@ -52,35 +52,35 @@
     "features": {
       "type": "features",
       "blocks": {
-        "sync": {
+        "video": {
           "type": "feature",
           "settings": {
-            "icon": "sync",
-            "heading": "Syncs with your calendars",
-            "text": "<p>Connect the calendars you already use. New events show up on the wall on their own.</p>"
+            "icon": "play",
+            "heading": "Plays the video you choose",
+            "text": "<p>Pick the clip and it plays inside the glass.</p>"
           }
         },
-        "touch": {
+        "memory": {
           "type": "feature",
           "settings": {
-            "icon": "touch",
-            "heading": "Touch to add and edit",
-            "text": "<p>Tap a day to add an event, tick off a chore or check tomorrow.</p>"
+            "icon": "star",
+            "heading": "Room for more than one memory",
+            "text": "<p>4GB of built-in memory holds videos, photos and music files.</p>"
           }
         },
-        "photos": {
+        "gift": {
           "type": "feature",
           "settings": {
-            "icon": "photo",
-            "heading": "A photo frame when idle",
-            "text": "<p>When nobody is using it, the screen turns into a slideshow of your family photos.</p>"
+            "icon": "gift",
+            "heading": "A gift that is about them",
+            "text": "<p>For anniversaries, Valentine's Day, weddings, a new baby, or someone who is missed.</p>"
           }
         }
       },
-      "block_order": ["sync", "touch", "photos"],
+      "block_order": ["video", "memory", "gift"],
       "settings": {
         "eyebrow": "",
-        "heading": "Built for the busiest room in the house",
+        "heading": "A memory they can hold",
         "background": "muted"
       }
     }
