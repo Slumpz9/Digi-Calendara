@@ -1,0 +1,49 @@
+{%- comment -%}
+  A CSS-drawn calendar display. Used as the hero visual and as the placeholder
+  wherever a product photo has not been uploaded yet.
+
+  Usage: {% render 'calendar-device' %}
+         {% render 'calendar-device', compact: true %}
+{%- endcomment -%}
+{%- liquid
+  assign now_seconds = 'now' | date: '%s' | plus: 0
+  assign people = 'Sam,Alex,Mia,Leo' | split: ','
+  assign schedule = '8:15~School run~1,4:30~Piano~3,6:00~Taco night~4|9:30~Dentist~2,5:00~Soccer~3|7:00~Bins out~4,12:30~Lunch w/ Jo~1,6:30~Swim~2|3:45~Book club~1,5:15~Soccer~3|10:00~Farmers market~4,2:00~Birthday party~2,7:30~Movie night~3' | split: '|'
+-%}
+<div class="device{% if compact %} device--compact{% endif %}" role="img" aria-label="{{ 'general.device_label' | t }}">
+  <div class="device__screen" aria-hidden="true">
+    <div class="device__ui" data-device>
+      <div class="device__bar">
+        <span class="device__month" data-device-month>{{ 'now' | date: '%B %Y' }}</span>
+        <span class="device__people">
+          {%- for person in people -%}
+            <span class="device__person"><i style="--ev: var(--ev-{{ forloop.index }})"></i>{{ person }}</span>
+          {%- endfor -%}
+        </span>
+        <span class="device__time" data-device-time>{{ 'now' | date: '%l:%M %p' }}</span>
+      </div>
+      <div class="device__days">
+        {%- for day in schedule -%}
+          {%- liquid
+            assign offset = forloop.index0 | times: 86400
+            assign day_seconds = now_seconds | plus: offset
+            assign events = day | split: ','
+          -%}
+          <div class="device__day{% if forloop.first %} is-today{% endif %}" data-device-day="{{ forloop.index0 }}">
+            <div class="device__date">
+              <span data-device-weekday>{{ day_seconds | date: '%a' }}</span>
+              <b data-device-number>{{ day_seconds | date: '%e' | strip }}</b>
+            </div>
+            {%- for event in events -%}
+              {%- assign parts = event | split: '~' -%}
+              <div class="device__event" style="--ev: var(--ev-{{ parts[2] }})">
+                <small>{{ parts[0] }}</small>
+                {{ parts[1] }}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>

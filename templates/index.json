@@ -1,0 +1,262 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "The family calendar display",
+        "heading": "The whole household, on one wall.",
+        "text": "<p>A touchscreen calendar for your home. It syncs the calendars you already use and shows everyone's week at a glance.</p>",
+        "button_label": "Shop displays",
+        "secondary_label": "See how it works",
+        "background": "default"
+      }
+    },
+    "trust": {
+      "type": "trust-bar",
+      "blocks": {
+        "shipping": { "type": "item", "settings": { "icon": "truck", "text": "Free shipping" } },
+        "trial": { "type": "item", "settings": { "icon": "home", "text": "30-day home trial" } },
+        "warranty": { "type": "item", "settings": { "icon": "shield", "text": "2-year warranty" } },
+        "subscription": { "type": "item", "settings": { "icon": "check", "text": "No subscription needed" } }
+      },
+      "block_order": ["shipping", "trial", "warranty", "subscription"],
+      "settings": { "background": "default" }
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "sync": {
+          "type": "feature",
+          "settings": {
+            "icon": "sync",
+            "heading": "Syncs with your calendars",
+            "text": "<p>Connect Google, iCloud and Outlook calendars once. New events show up on the wall on their own.</p>"
+          }
+        },
+        "colours": {
+          "type": "feature",
+          "settings": {
+            "icon": "palette",
+            "heading": "A colour for everyone",
+            "text": "<p>Each person gets their own colour, so anyone can see who needs to be where from across the room.</p>"
+          }
+        },
+        "chores": {
+          "type": "feature",
+          "settings": {
+            "icon": "star",
+            "heading": "Chore charts kids tap off",
+            "text": "<p>Set up routines and chores. Kids tick them off on the screen and see their own progress.</p>"
+          }
+        },
+        "meals": {
+          "type": "feature",
+          "settings": {
+            "icon": "meal",
+            "heading": "Meal plan for the week",
+            "text": "<p>Plan dinners next to the schedule, so the question of what's for tea is already answered.</p>"
+          }
+        },
+        "lists": {
+          "type": "feature",
+          "settings": {
+            "icon": "list",
+            "heading": "Shared lists",
+            "text": "<p>Groceries, packing and to-dos live on the display and on every family member's phone.</p>"
+          }
+        },
+        "photos": {
+          "type": "feature",
+          "settings": {
+            "icon": "photo",
+            "heading": "A photo frame when idle",
+            "text": "<p>When nobody is using it, the screen turns into a slideshow of your family photos.</p>"
+          }
+        }
+      },
+      "block_order": ["sync", "colours", "chores", "meals", "lists", "photos"],
+      "settings": {
+        "eyebrow": "What it does",
+        "heading": "One screen for everything the house runs on",
+        "background": "default"
+      }
+    },
+    "products": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "The displays",
+        "heading": "Choose your display",
+        "limit": 3,
+        "button_label": "View all",
+        "background": "muted"
+      }
+    },
+    "how": {
+      "type": "how-it-works",
+      "blocks": {
+        "mount": {
+          "type": "step",
+          "settings": {
+            "heading": "Hang it or stand it",
+            "text": "<p>Use the included wall mount or the stand. All it needs is a power socket and Wi-Fi.</p>"
+          }
+        },
+        "connect": {
+          "type": "step",
+          "settings": {
+            "heading": "Connect your calendars",
+            "text": "<p>Sign in from your phone and pick which calendars to show. Give each person a colour.</p>"
+          }
+        },
+        "share": {
+          "type": "step",
+          "settings": {
+            "heading": "Everyone stays in sync",
+            "text": "<p>Add an event on any phone and it appears on the wall. Change it on the wall and it updates everywhere.</p>"
+          }
+        }
+      },
+      "block_order": ["mount", "connect", "share"],
+      "settings": {
+        "eyebrow": "Setup",
+        "heading": "On the wall and in sync in minutes",
+        "background": "dark"
+      }
+    },
+    "compare": {
+      "type": "compare",
+      "blocks": {
+        "small": {
+          "type": "model",
+          "settings": {
+            "size": "10\"",
+            "heading": "Counter",
+            "subheading": "Best for a worktop or desk",
+            "specs": "HD touchscreen\nStand included\nFits under kitchen cabinets",
+            "button_label": "Shop the 10\"",
+            "highlight": false
+          }
+        },
+        "medium": {
+          "type": "model",
+          "settings": {
+            "size": "15\"",
+            "heading": "Wall",
+            "subheading": "Best for the kitchen or hallway",
+            "specs": "Full HD touchscreen\nWall mount and stand included\nReadable from across the room",
+            "button_label": "Shop the 15\"",
+            "highlight": true,
+            "badge": "Most popular"
+          }
+        },
+        "large": {
+          "type": "model",
+          "settings": {
+            "size": "27\"",
+            "heading": "Command centre",
+            "subheading": "Best for large or busy families",
+            "specs": "Full HD touchscreen\nWall mount included\nMonth view with room for everyone",
+            "button_label": "Shop the 27\"",
+            "highlight": false
+          }
+        }
+      },
+      "block_order": ["small", "medium", "large"],
+      "settings": {
+        "eyebrow": "Compare sizes",
+        "heading": "Which one fits your home?",
+        "background": "default"
+      }
+    },
+    "quotes": {
+      "type": "testimonials",
+      "blocks": {
+        "one": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Paste a real customer review here once you have one.</p>",
+            "author": "Customer name",
+            "detail": "Verified buyer"
+          }
+        },
+        "two": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Paste a real customer review here once you have one.</p>",
+            "author": "Customer name",
+            "detail": "Verified buyer"
+          }
+        },
+        "three": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Paste a real customer review here once you have one.</p>",
+            "author": "Customer name",
+            "detail": "Verified buyer"
+          }
+        }
+      },
+      "block_order": ["one", "two", "three"],
+      "settings": {
+        "eyebrow": "From real homes",
+        "heading": "What customers say",
+        "background": "muted"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "calendars": {
+          "type": "question",
+          "settings": {
+            "question": "Which calendars does it work with?",
+            "answer": "<p>List the calendar services your display syncs with here, for example Google Calendar, Apple iCloud and Outlook.</p>"
+          }
+        },
+        "subscription": {
+          "type": "question",
+          "settings": {
+            "question": "Is there a monthly fee?",
+            "answer": "<p>Say plainly whether every feature is included in the price or whether some need a subscription.</p>"
+          }
+        },
+        "mounting": {
+          "type": "question",
+          "settings": {
+            "question": "How does it mount, and does it need to be plugged in?",
+            "answer": "<p>Explain what's in the box for mounting, the cable length, and that it needs mains power and Wi-Fi.</p>"
+          }
+        },
+        "privacy": {
+          "type": "question",
+          "settings": {
+            "question": "What happens to our calendar data?",
+            "answer": "<p>Describe where calendar data is stored and who can see it, and link to your privacy policy.</p>"
+          }
+        },
+        "returns": {
+          "type": "question",
+          "settings": {
+            "question": "What if it doesn't suit our home?",
+            "answer": "<p>Summarise your returns window and warranty here, and link to the full policy.</p>"
+          }
+        }
+      },
+      "block_order": ["calendars", "subscription", "mounting", "privacy", "returns"],
+      "settings": {
+        "eyebrow": "Questions",
+        "heading": "Good to know before you buy",
+        "background": "default"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Be first to hear about new displays",
+        "text": "<p>Restocks, new features and the occasional offer. Unsubscribe any time.</p>",
+        "background": "muted"
+      }
+    }
+  },
+  "order": ["hero", "trust", "features", "products", "how", "compare", "quotes", "faq", "newsletter"]
+}

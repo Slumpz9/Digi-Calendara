@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": {} },
+        "quantity": { "type": "quantity", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true } },
+        "perks": {
+          "type": "perks",
+          "settings": { "items": "Free shipping\n30-day returns\nWall mount and stand included" }
+        },
+        "description": { "type": "description", "settings": {} },
+        "specs": {
+          "type": "collapsible",
+          "settings": {
+            "heading": "Tech specs",
+            "content": "<p>Screen size and resolution, dimensions, weight, Wi-Fi, power, and mounting details.</p>"
+          }
+        },
+        "box": {
+          "type": "collapsible",
+          "settings": {
+            "heading": "What's in the box",
+            "content": "<p>List the display, power adapter, wall mount, stand and anything else you include.</p>"
+          }
+        },
+        "shipping": {
+          "type": "collapsible",
+          "settings": {
+            "heading": "Shipping and returns",
+            "content": "<p>Delivery times, costs and your returns window.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "quantity",
+        "buy_buttons",
+        "perks",
+        "description",
+        "specs",
+        "box",
+        "shipping"
+      ],
+      "settings": {}
+    },
+    "features": {
+      "type": "features",
+      "blocks": {
+        "sync": {
+          "type": "feature",
+          "settings": {
+            "icon": "sync",
+            "heading": "Syncs with your calendars",
+            "text": "<p>Connect the calendars you already use. New events show up on the wall on their own.</p>"
+          }
+        },
+        "touch": {
+          "type": "feature",
+          "settings": {
+            "icon": "touch",
+            "heading": "Touch to add and edit",
+            "text": "<p>Tap a day to add an event, tick off a chore or check tomorrow.</p>"
+          }
+        },
+        "photos": {
+          "type": "feature",
+          "settings": {
+            "icon": "photo",
+            "heading": "A photo frame when idle",
+            "text": "<p>When nobody is using it, the screen turns into a slideshow of your family photos.</p>"
+          }
+        }
+      },
+      "block_order": ["sync", "touch", "photos"],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Built for the busiest room in the house",
+        "background": "muted"
+      }
+    }
+  },
+  "order": ["main", "features"]
+}

@@ -1,0 +1,35 @@
+{%- comment -%}
+  Font faces and design tokens driven by theme settings.
+{%- endcomment -%}
+{%- liquid
+  assign body_bold = settings.font_body | font_modify: 'weight', 'bold'
+  assign body_italic = settings.font_body | font_modify: 'style', 'italic'
+-%}
+{% style %}
+  {{ settings.font_body | font_face: font_display: 'swap' }}
+  {{ body_bold | font_face: font_display: 'swap' }}
+  {{ body_italic | font_face: font_display: 'swap' }}
+  {{ settings.font_heading | font_face: font_display: 'swap' }}
+
+  :root {
+    --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
+    --font-body-weight: {{ settings.font_body.weight }};
+    --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
+    --font-heading-weight: {{ settings.font_heading.weight }};
+    --font-scale: {{ settings.font_scale | divided_by: 100.0 }};
+
+    --color-bg: {{ settings.color_background }};
+    --color-surface: {{ settings.color_surface }};
+    --color-muted: {{ settings.color_muted }};
+    --color-text: {{ settings.color_text }};
+    --color-accent: {{ settings.color_accent }};
+    --color-button: {{ settings.color_button }};
+    --color-button-text: {{ settings.color_button_text }};
+    --color-dark: {{ settings.color_button }};
+    --color-dark-text: {{ settings.color_button_text }};
+
+    --page-width: {{ settings.page_width }}px;
+    --radius: {{ settings.radius }}px;
+    --radius-button: {{ settings.button_radius }}px;
+  }
+{% endstyle %}

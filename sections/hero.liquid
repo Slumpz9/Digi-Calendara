@@ -1,0 +1,110 @@
+{%- assign s = section.settings -%}
+<section class="hero section--{{ s.background }}">
+  <div class="page-width hero__grid">
+    <div class="hero__content">
+      {%- if s.eyebrow != blank -%}<p class="eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+      {%- if s.heading != blank -%}<h1 class="h1">{{ s.heading | escape }}</h1>{%- endif -%}
+      {%- if s.text != blank -%}<div class="hero__text rte">{{ s.text }}</div>{%- endif -%}
+
+      {%- if s.button_label != blank or s.secondary_label != blank -%}
+        <div class="hero__buttons">
+          {%- if s.button_label != blank -%}
+            <a class="button button--primary" href="{{ s.button_link | default: routes.all_products_collection_url }}">
+              {{- s.button_label | escape -}}
+            </a>
+          {%- endif -%}
+          {%- if s.secondary_label != blank -%}
+            <a class="button button--outline" href="{{ s.secondary_link | default: '#how-it-works' }}">
+              {{- s.secondary_label | escape -}}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if s.note != blank -%}<p class="hero__note">{{ s.note | escape }}</p>{%- endif -%}
+    </div>
+
+    <div class="hero__media">
+      {%- if s.image != blank -%}
+        {{
+          s.image
+          | image_url: width: 1800
+          | image_tag: loading: 'eager', fetchpriority: 'high', widths: '500, 800, 1100, 1400, 1800', sizes: '(min-width: 990px) 55vw, 100vw', class: 'hero__image'
+        }}
+      {%- else -%}
+        {% render 'calendar-device' %}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The family calendar display"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The whole household, on one wall."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>A touchscreen calendar for your home. It syncs the calendars you already use and shows everyone's week at a glance.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop displays"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Second button label",
+      "default": "See how it works"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Second button link"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Small note under buttons"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Leave empty to show the illustrated display"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        { "value": "default", "label": "Default" },
+        { "value": "muted", "label": "Muted" },
+        { "value": "dark", "label": "Dark" }
+      ],
+      "default": "default"
+    }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

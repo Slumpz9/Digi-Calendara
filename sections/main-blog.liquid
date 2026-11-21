@@ -1,0 +1,47 @@
+{%- paginate blog.articles by 9 -%}
+  <section class="section">
+    <div class="page-width">
+      <header class="page-header">
+        <h1 class="h1">{{ blog.title | escape }}</h1>
+      </header>
+
+      {%- if blog.articles.size > 0 -%}
+        <div class="product-grid">
+          {%- for article in blog.articles -%}
+            <article class="card">
+              {%- if article.image -%}
+                <a class="card__media card__media--photo" href="{{ article.url }}" tabindex="-1" aria-hidden="true">
+                  {{
+                    article.image
+                    | image_url: width: 900
+                    | image_tag: loading: 'lazy', widths: '300, 450, 600, 900', sizes: '(min-width: 990px) 30vw, (min-width: 600px) 45vw, 90vw'
+                  }}
+                </a>
+              {%- endif -%}
+              <div class="card__body">
+                <p class="card__meta">{{ article.published_at | time_tag: format: 'date' }}</p>
+                <h2 class="card__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h2>
+                <p>{{ article.excerpt_or_content | strip_html | truncatewords: 28 }}</p>
+                <a class="link" href="{{ article.url }}">{{ 'blogs.read_more' | t }}</a>
+              </div>
+            </article>
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <p class="empty">{{ 'blogs.empty' | t }}</p>
+      {%- endif -%}
+
+      {%- if paginate.pages > 1 -%}
+        <nav class="pagination" aria-label="{{ 'general.pagination' | t }}">
+          {{ paginate | default_pagination }}
+        </nav>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Blog posts"
+}
+{% endschema %}

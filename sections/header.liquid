@@ -1,0 +1,131 @@
+{%- liquid
+  assign menu = section.settings.menu
+  assign logo = section.settings.logo
+-%}
+<header class="header{% if section.settings.sticky %} header--sticky{% endif %}">
+  <div class="page-width header__inner">
+    {%- if menu.links.size > 0 -%}
+      <details class="header__drawer" data-menu-drawer>
+        <summary class="header__icon" aria-label="{{ 'general.menu' | t }}">
+          {% render 'icon', name: 'menu' %}
+        </summary>
+        <nav class="drawer" aria-label="{{ 'general.menu' | t }}">
+          <ul role="list">
+            {%- for link in menu.links -%}
+              <li>
+                <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+                {%- if link.links.size > 0 -%}
+                  <ul role="list">
+                    {%- for child in link.links -%}
+                      <li>
+                        <a href="{{ child.url }}"{% if child.current %} aria-current="page"{% endif %}>
+                          {{- child.title | escape -}}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      </details>
+    {%- endif -%}
+
+    <a class="header__logo" href="{{ routes.root_url }}">
+      {%- if logo != blank -%}
+        {%- assign logo_height = section.settings.logo_width | divided_by: logo.aspect_ratio | round -%}
+        {{
+          logo
+          | image_url: width: 600
+          | image_tag: width: section.settings.logo_width, height: logo_height, alt: shop.name, loading: 'eager'
+        }}
+      {%- else -%}
+        {% render 'icon', name: 'calendar' %}
+        <span>{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    {%- if menu.links.size > 0 -%}
+      <nav class="header__nav" aria-label="{{ 'general.menu' | t }}">
+        <ul role="list">
+          {%- for link in menu.links -%}
+            <li>
+              {%- if link.links.size > 0 -%}
+                <details class="header__dropdown" data-dropdown>
+                  <summary>
+                    {{ link.title | escape }}
+                    {% render 'icon', name: 'chevron' %}
+                  </summary>
+                  <ul role="list">
+                    {%- for child in link.links -%}
+                      <li>
+                        <a href="{{ child.url }}"{% if child.current %} aria-current="page"{% endif %}>
+                          {{- child.title | escape -}}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </details>
+              {%- else -%}
+                <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    {%- endif -%}
+
+    <div class="header__actions">
+      <a class="header__icon" href="{{ routes.search_url }}" aria-label="{{ 'general.search' | t }}">
+        {% render 'icon', name: 'search' %}
+      </a>
+      {%- if shop.customer_accounts_enabled -%}
+        <a class="header__icon header__icon--account" href="{{ routes.account_url }}" aria-label="{{ 'general.account' | t }}">
+          {% render 'icon', name: 'account' %}
+        </a>
+      {%- endif -%}
+      <a class="header__icon header__cart" href="{{ routes.cart_url }}" aria-label="{{ 'general.cart' | t }}">
+        {% render 'icon', name: 'cart' %}
+        <span class="header__count" data-cart-count{% if cart.item_count == 0 %} hidden{% endif %}>
+          {{- cart.item_count -}}
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Logo width",
+      "min": 60,
+      "max": 240,
+      "step": 10,
+      "unit": "px",
+      "default": 140
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Keep header visible while scrolling",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

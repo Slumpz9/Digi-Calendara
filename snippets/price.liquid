@@ -1,0 +1,25 @@
+{%- comment -%}
+  Renders a price for a product or a variant.
+  Usage: {% render 'price', product: product %}
+         {% render 'price', product: product, variant: current_variant %}
+         {% render 'price', product: product, show_from: true %}
+{%- endcomment -%}
+{%- liquid
+  assign target = variant | default: product
+  assign compare_price = target.compare_at_price
+  assign current_price = target.price
+  assign money_price = current_price | money
+-%}
+<div class="price{% if compare_price > current_price %} price--sale{% endif %}">
+  {%- if compare_price > current_price -%}
+    <span class="visually-hidden">{{ 'products.sale_price' | t }}</span>
+    <span class="price__current">{{ money_price }}</span>
+    <span class="visually-hidden">{{ 'products.regular_price' | t }}</span>
+    <s class="price__compare">{{ compare_price | money }}</s>
+    <span class="badge">{{ 'products.on_sale' | t }}</span>
+  {%- elsif show_from and product.price_varies -%}
+    <span class="price__current">{{ 'products.from_price_html' | t: price: money_price }}</span>
+  {%- else -%}
+    <span class="price__current">{{ money_price }}</span>
+  {%- endif -%}
+</div>
